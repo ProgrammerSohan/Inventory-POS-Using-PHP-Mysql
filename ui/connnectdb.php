@@ -1,6 +1,15 @@
 <?php 
 
+try{
+
     $pdo= new PDO('mysql:host=localhost;dbname=pos_barcode_db','root','');
 
-    echo 'connection success';
+
+}catch(PDOException $e){
+
+    echo $e->getMessage();
+}
+
+    
+  //  echo 'connection success';
 ?>
