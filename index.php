@@ -1,6 +1,16 @@
 <?php 
 //include_once"ui/connectdb.php";
 require_once("ui/connnectdb.php");
+session_start();
+
+if(isset($_POST['btn_login'])){
+
+  $useremail = $_POST['txt_email'];
+  $password = $_POST['txt_password'];
+
+  echo $useremail." ".$password;
+
+}
 
 
 ?>
