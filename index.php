@@ -14,15 +14,26 @@ if(isset($_POST['btn_login'])){
 
   $row = $select->fetch(PDO::FETCH_ASSOC);
 
-  if($row['useremail']==$useremail AND $row['userpassword']==$password){
+          if(is_array($row)){
 
-   echo $success = "Login Success";
-   header('refresh: 1; ui/dashboard.php');
+            if($row['useremail']==$useremail AND $row['userpassword']==$password){
 
-}else{
+              echo $success = "Login Success";
+              header('refresh: 1; ui/dashboard.php');
+          
+                   
+            }        
+  
 
-  echo $success = "Wrong Email or Password";
-}
+
+  }else{
+
+    echo $success = "Wrong Email or Password";
+
+  }
+
+
+  
 
 }
 
